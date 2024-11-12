@@ -1,20 +1,18 @@
-# Use a base Python image
+# Usa una imagen base de Python
 FROM python:3.9-slim
 
-# Set the working directory in the container
+# Establece el directorio de trabajo en el contenedor
 WORKDIR /app
 
-# Copy the requirements.txt file (if you have additional dependencies)
-COPY requirements.txt .
+# Copia el archivo de requisitos y la aplicación al contenedor
+COPY requirements.txt requirements.txt
+COPY app.py app.py
 
-# Install the dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Instala las dependencias de Python
+RUN pip install -r requirements.txt
 
-# Copy all project files to the container
-COPY . .
+# Expone el puerto en el contenedor
+EXPOSE 5000
 
-# Expose port 8080
-EXPOSE 8080
-
-# Command to run the Flask app
-CMD ["python", "Hour.py"]
+# Comando para ejecutar la aplicación
+CMD ["python", "app.py"]
