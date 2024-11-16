@@ -36,17 +36,23 @@ cd hour-py
 If you want to run the application locally:
 1. Make sure Python is installed.
 2. Install the dependencies listed in requirements.txt
+
 pip install -r requirements.txt
-3. Run the application:
+
+4. Run the application:
+   
 python app.py
+
 The application will be available at:
 👉 http://localhost:5000
 # Deploying with Docker 🚀
 ## Step 1: Pull the Image
 Download the Docker image from Docker Hub
+
 docker pull alenac07/python:latest
 ## Step 2: Run the Container
 Run the container with the following command:
+
 docker run -d -p 5000:5000 alenac07/python:latest
 ## Step 3: Access the Application
 Open your browser and go to:
